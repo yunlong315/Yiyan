@@ -1,0 +1,43 @@
+server:
+  port: 6666
+  servlet:
+    context-path: /super
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://bj-cdb-c0qzmyks.sql.tencentcdb.com:63871/YY_ADMIN?useUnicode=true&characterEncoding=utf-8&com.mysql.jdbc.faultInjection.serverCharsetIndex=45
+    username: root
+    password: CHoiuy7890
+  data:
+    redis:
+      host: 116.204.119.153
+      port: 6379
+      password: buaa123456
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.lucifer.springboot.cache.mapper: debug
+
+
+rocketmq:
+  nameServer: 116.204.119.153:9876
+  producer:
+    group: "module-admin"
+    send-message-timeout: 10000 #发送时间超时时间
+    retry-times-when-send-async-failed: 0 #异步消息发送失败重试次数
+    retry-times-when-send-failed: 2 #消息发送失败后的最大重试次数
+    compress-message-body-threshold: 4096 #消息Body超过多大开始压缩（Consumer收到消息会自动解压缩），单位字节
+    max-message-size: 4194304  #消息最大容量
+    retry-next-server: true
+
+aliyun:
+  bucketName: yiyan-1321758832
+  SecretId: AKIDeCcv67ypT1dJsLfpaHsLE2gCct7C8WtG
+  SecretKey: StHg0BHORG4qWEnEoGVp9StCZwLbm4LT
+  regionName: ap-beijing
+
+

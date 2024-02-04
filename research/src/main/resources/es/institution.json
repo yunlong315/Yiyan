@@ -1,0 +1,40 @@
+{
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "name": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "acronyms": {
+        "type": "text",
+        "analyzer": "ik_max_word"
+      },
+      "country": {
+        "type": "keyword"
+      },
+      "type": {
+        "type": "keyword"
+      },
+      "image_url": {
+        "type": "keyword"
+      },
+      "works_count": {
+        "type": "integer"
+      },
+      "cited_by_count": {
+        "type": "integer"
+      },
+      "h_index": {
+        "type": "integer"
+      }
+    }
+  }
+}

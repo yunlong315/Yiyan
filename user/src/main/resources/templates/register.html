@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>注册</title>
+    <style>
+        body {
+            background-color: #fff;
+            color: #24292e;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+            Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        #container {
+            width: 70%;
+            height: 80%;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+        }
+
+        #icon {
+            height: 40%;
+            width: auto;
+            transform: scale(1.4);
+            margin-top: 20px;
+        }
+
+        h1 {
+            font-weight: bold;
+        }
+
+        .separator {
+            width: 80%;
+            height: 2px;
+            background-color: #0366d6; /* GitHub blue */
+            margin-bottom: 20px;
+        }
+
+        p {
+            width: 80%;
+            text-align: left;
+            margin-bottom: 10px;
+        }
+
+        #btn {
+            width: 60%;
+            padding: 10px;
+            background-color: #0366d6; /* GitHub blue */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin: 20px 0;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        #btn a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #btn:hover {
+            background-color: #003366; /* Darker shade of GitHub blue on hover */
+        }
+
+        #copyright {
+            color: #6a737d; /* GitHub gray text color */
+            margin-top: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <img src="https://yiyan-1321758832.cos.ap-beijing.myqcloud.com/img/logo.svg" alt="Logo" id="icon" />
+    <div class="separator"></div>
+    <div>
+        <span style="margin-right: 10px">亲爱的用户</span>
+        <span th:text="${username}" />
+    </div>
+
+
+    <p>欢迎注册易研学术交流平台，请点击下面按钮验证邮箱。<b>非本人操作可忽略.</b></p>
+    <button id="btn">
+        <a th:href="${url}">点击验证</a>
+    </button>
+    <p>
+        无法正常显示? 请复制以下链接至浏览器打开: <br />
+        <p th:text="${url}" />
+    </p>
+    <div id="copyright">CopyRight Information</div>
+</div>
+</body>
+</html>

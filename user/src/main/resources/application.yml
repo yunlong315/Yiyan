@@ -1,0 +1,61 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: CHoiuy7890
+    url: jdbc:mysql://bj-cdb-c0qzmyks.sql.tencentcdb.com:63871/YY_UM?useUnicode=true&characterEncoding=utf-8&com.mysql.jdbc.faultInjection.serverCharsetIndex=45
+    username: root
+  mail:
+    host: mail.qq.com
+    username: aamofe@foxmail.com
+    password: kckahqszucbpgifh
+    default-encoding: UTF-8
+    port: 465
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+            protocols: TLSv1.2
+          socketFactory:
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+  data:
+    redis:
+      password: buaa123456
+      port: 6379
+      host: 8.130.105.222
+      timeout: 30000
+  servlet:
+    multipart:
+      max-request-size: 100MB
+rocketmq:
+  nameServer: 116.204.119.153:9876
+  producer:
+    group: "userTopic"
+    send-message-timeout: 300000 #发送时间超时时间
+    retry-times-when-send-async-failed: 0 #异步消息发送失败重试次数
+    retry-times-when-send-failed: 2 #消息发送失败后的最大重试次数
+    compress-message-body-threshold: 4096 #消息Body超过多大开始压缩（Consumer收到消息会自动解压缩），单位字节
+    max-message-size: 4194304  #消息最大容量
+    retry-next-server: true
+aliyun:
+  bucketName: yiyan-1321758832
+  SecretId: AKIDeCcv67ypT1dJsLfpaHsLE2gCct7C8WtG
+  SecretKey: StHg0BHORG4qWEnEoGVp9StCZwLbm4LT
+  regionName: ap-beijing
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  level:
+    com.lucifer.springboot.cache.mapper: debug
+
+server:
+  port: 8000

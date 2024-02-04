@@ -1,0 +1,55 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    password: CHoiuy7890
+    url: jdbc:mysql://rm-2zeys2p0j10zp191byo.mysql.rds.aliyuncs.com:3306/openalex?useUnicode=true&characterEncoding=utf-8&com.mysql.jdbc.faultInjection.serverCharsetIndex=45
+    username: root
+  data:
+    redis:
+      password: buaa123456
+      port: 6379
+      host: 116.204.119.153
+      timeout: 30000
+rocketmq:
+  nameServer: 116.204.119.153:9876
+  producer:
+    group: "researchTopic"
+    send-message-timeout: 10000 #发送时间超时时间
+    retry-times-when-send-async-failed: 0 #异步消息发送失败重试次数
+    retry-times-when-send-failed: 2 #消息发送失败后的最大重试次数
+    compress-message-body-threshold: 4096 #消息Body超过多大开始压缩（Consumer收到消息会自动解压缩），单位字节
+    max-message-size: 4194304  #消息最大容量
+    retry-next-server: true
+aliyun:
+  bucketName: yiyan-1321758832
+  SecretId: AKIDeCcv67ypT1dJsLfpaHsLE2gCct7C8WtG
+  SecretKey: StHg0BHORG4qWEnEoGVp9StCZwLbm4LT
+  regionName: ap-beijing
+
+elasticsearch:
+  host: 122.9.0.85
+  port: 9200
+  username: elastic
+  password: 707602
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+
+ok:
+  http:
+    connect-timeout: 60
+    read-timeout: 60
+    write-timeout: 60
+    max-idle-connections: 200
+    keep-alive-duration: 300
+wenxin:
+  apiKey: Af56HjAz1QOmEVKGc93e4ZAi
+  secretKey: 00hEMvyNm13CmpdBnTVqymh7wSOwBPPf
+  accessTokenUrl: https://aip.baidubce.com/oauth/2.0/token
+  ERNIE-Bot4.0URL: https://aip.baidubce.com/rpc/2.0/ai_custom/v1/wenxinworkshop/chat/completions_pro
+
+server:
+  port: 8848
+  servlet:
+    context-path: /research

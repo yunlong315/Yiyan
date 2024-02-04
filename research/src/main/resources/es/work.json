@@ -1,0 +1,63 @@
+{
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "keyword"
+      },
+      "title": {
+        "type": "text",
+        "analyzer": "ik_max_word",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "authors": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "keyword"
+          },
+          "displayName": {
+            "type": "keyword"
+          },
+          "rawAffiliationString": {
+            "type": "keyword"
+          }
+        }
+      },
+      "abstract_text": {
+        "type": "text"
+      },
+      "concepts": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "keyword"
+          },
+          "displayName": {
+            "type": "keyword"
+          }
+        }
+      },
+      "source":{
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "keyword"
+          },
+          "displayName": {
+            "type": "keyword"
+          }
+        }
+      },
+      "publication_year": {
+        "type": "integer"
+      },
+      "cited_by_count": {
+        "type": "integer"
+      }
+    }
+  }
+}
